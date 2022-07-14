@@ -48,14 +48,11 @@ const Products: NextPage = () => {
         `restaurant/${id}?attributes=name image`
       );
       setCategories(categoryData.data.data.reverse());
-      console.log(categoryData.data.data.reverse());
       //Get Product List
       const data = await getProductApi(
         `restaurant/${id}?attributes=name description image`
       );
-
       if (data.statusText === "OK") {
-        console.log("product", data.data);
         data.data.data.reverse().forEach((element: product) => {
           const categoryName = element.category?.name.trim();
           if (productList[categoryName]) {
@@ -89,7 +86,6 @@ const Products: NextPage = () => {
           <div className="w-full p-2 flex flex-col justify-start flex-wrap">
             {!loading ? (
               <>
-                {console.log("Loading", products)}
                 {products && Object.keys(products).length > 0 ? (
                   Object.keys(products).map((category: string, i: number) => (
                     <div

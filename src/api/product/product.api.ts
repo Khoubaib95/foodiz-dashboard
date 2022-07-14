@@ -20,7 +20,6 @@ export const createProductApi = async (
 ) => {
   if (productData.image) {
     const { data } = (await imagePostApi(productData.image)) as { data: any };
-    console.log(data.data.url);
     if (data.message === "upload image") {
       productData.image = data.data.url;
     } else {

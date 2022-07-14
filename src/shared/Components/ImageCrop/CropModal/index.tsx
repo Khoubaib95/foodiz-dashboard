@@ -40,7 +40,6 @@ function FModal({
       setImageURL(url);
       setFile(file);
       setImage(file);
-      console.log("Image==> ", file);
       setReady(true);
       setOpen(false);
     } catch (error) {
@@ -51,10 +50,7 @@ function FModal({
         timeout: 5000,
         location: "modal",
       });*/
-      console.log(error);
     }
-
-    //setLoading(false);
   };
 
   return (

@@ -22,7 +22,6 @@ function Form({ setAdding }: any) {
       cover: null,
     },
     onSubmit: async (values) => {
-      console.log(values);
       setLoading(true);
       try {
         const { data } = await createRestaurantApi(values);
@@ -43,7 +42,6 @@ function Form({ setAdding }: any) {
   });
 
   const setImage = (imageName: string) => (image: any) => {
-    console.log("setImage", imageName);
     formik.setFieldValue(imageName, image);
   };
   return (

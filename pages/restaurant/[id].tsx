@@ -11,11 +11,9 @@ const Restaurant: NextPage = () => {
     if (!isReady) return;
     const id: string = query.id as string;
     (async () => {
-      console.log("Restaurant");
       const { data } = await getRestaurantApi(
         `id/${id}?attributes=name image cover description`
       );
-      console.log(data.data);
       setRestaurant(data.data);
     })();
   }, [isReady, query.id]);

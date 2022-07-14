@@ -13,7 +13,6 @@ export const createCategoryApi = async (
 ) => {
   if (categoryData.image) {
     const { data } = (await imagePostApi(categoryData.image)) as { data: any };
-    console.log(data.data.url);
     if (data.message === "upload image") {
       categoryData.image = data.data.url;
     } else {

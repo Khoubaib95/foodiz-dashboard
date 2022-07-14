@@ -65,7 +65,6 @@ function AddProductForm({
   });
 
   const setImage = (imageName: string) => (image: any) => {
-    console.log("setImage", imageName);
     formik.setFieldValue(imageName, image);
   };
 
@@ -89,9 +88,7 @@ function AddProductForm({
                 <div
                   onClick={() => {
                     formik.setFieldValue("category", category._id);
-                    console.log(formik.values);
                     setOpenModal(false);
-                    console.log("close");
                   }}
                   className="p-4 flex items-center hover:bg-indigo-100 cursor-pointer"
                 >

@@ -1,10 +1,6 @@
 import { useEffect, useState } from "react";
-
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
-import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
 import Form from "../../src/shared/PageComponents/ResetPassword/Form";
 
 const ResetPasswor: NextPage = () => {
@@ -17,11 +13,10 @@ const ResetPasswor: NextPage = () => {
   useEffect(() => {
     if (!isReady) return;
     const token: string = query.token as string;
-    console.log("ResetPasswor :", token);
     (async () => {
-      /*console.log("Restaurant");
+      // Not supported yet
+      /*
       const { data } = await getRestaurantApi(`id/${id}?attributes=name`);
-      console.log(data.data);
       setRestaurant(data.data);*/
     })();
   }, [isReady]);

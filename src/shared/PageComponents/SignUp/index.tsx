@@ -55,14 +55,12 @@ function Form() {
   });
 
   const setImage = (imageName: string) => (image: any) => {
-    console.log("setImage", imageName);
     formik.setFieldValue(imageName, image);
   };
 
   const submit = async () => {
     setLoading(true);
     try {
-      console.log(formik.values);
       const { fname, lname, email, password, image } = formik.values;
       const data = await signUpUserApi({
         fname,

@@ -44,7 +44,6 @@ export const dateSlice = createSlice({
     builder.addCase(signInUser.fulfilled, (state, { payload }) => {
       state.loading = false;
       state.isLoggedIn = true;
-      console.log("state.data : ", payload);
       state.data = payload;
       return state;
     });
@@ -53,7 +52,6 @@ export const dateSlice = createSlice({
       state.isLoggedIn = false;
       //@ts-ignore
       state.error = payload;
-      console.log("payload : ", payload);
       return state;
     });
   },

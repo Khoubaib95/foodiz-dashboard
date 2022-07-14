@@ -62,7 +62,6 @@ function SideBar() {
                       setSelectedRestaurant(restaurant._id);
                       setOpenModal(false);
                       push(`/restaurant/${restaurant._id}`);
-                      console.log("close");
                     }}
                     className="p-4 flex items-center hover:bg-indigo-100 cursor-pointer"
                   >

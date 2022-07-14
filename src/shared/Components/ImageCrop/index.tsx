@@ -10,12 +10,7 @@ function ImageCrop({ setImage, title }: any) {
 
   const handleChange = async (e: any) => {
     const file = e.target.files[0];
-    //console.log("handleChange : ", file);
     if (file) {
-      // const data = new FormData();
-      // data.append("image", file);
-      // console.log("handleChange : ", data);
-      // await signInUserApi(data);
       setFile(file);
       setImageURL(URL.createObjectURL(file));
       setOpenCrop(true);

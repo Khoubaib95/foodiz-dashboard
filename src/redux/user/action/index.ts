@@ -14,12 +14,10 @@ export const setUser = createAsyncThunk(
         return data.data;
       } catch (err: any) {
         if (err?.response?.status === 401) {
-          console.log("ssfdfcfvhbsnc ehvefn");
         }
         return rejectWithValue("Internal Error Server");
       }
     } else {
-      console.log("No token");
       return rejectWithValue("No token");
     }
   }
@@ -33,7 +31,6 @@ export const signInUser = createAsyncThunk(
         arg,
         "?attributes=fname lname email isEmailVerified image restaurants"
       );
-      console.log("LOGIN : ", data.data.access_token.token);
       setLocalAccessToken(data.data.access_token.token);
       return data.data;
     } catch (error: any) {

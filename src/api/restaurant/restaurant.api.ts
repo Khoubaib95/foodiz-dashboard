@@ -13,7 +13,6 @@ export const createRestaurantApi = async (
 ) => {
   if (restaurantData.image) {
     const { data } = await imagePostApi(restaurantData.image);
-    console.log(data.data.url);
     if (data.message === "upload image") restaurantData.image = data.data.url;
   } else {
     restaurantData.image = "";
@@ -21,7 +20,6 @@ export const createRestaurantApi = async (
   if (restaurantData.cover) {
     const { data } = await imagePostApi(restaurantData.cover);
     if (data.message === "upload image") restaurantData.cover = data.data.url;
-    console.log(data.data.url);
   } else {
     restaurantData.cover = "";
   }
